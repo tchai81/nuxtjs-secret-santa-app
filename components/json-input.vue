@@ -38,9 +38,11 @@ export default {
   },
   methods: {
     ...mapMutations({
-      setResult: 'santa/SET_RESULT'
+      setResult: 'santa/SET_RESULT',
+      emptyResult: 'santa/EMPTY_RESULT'
     }),
     onProcess() {
+      this.emptyResult()
       this.classObject['is-invalid'] = false
       if (!this.validate(this.employees)) {
         this.classObject['is-invalid'] = true
