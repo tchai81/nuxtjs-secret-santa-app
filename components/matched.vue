@@ -1,5 +1,5 @@
 <template>
-    <div v-if="matched.length" class="card">
+    <div class="card mb-4">
       <div class="card-body">
         <h5 class="card-title">Matched Employees ({{total}})</h5>
         <p class="card-text">

@@ -1,5 +1,5 @@
 <template>
-    <div v-if="unmatched.length" class="card">
+    <div class="card mb-4">
       <div class="card-body">
         <h5 class="card-title">Unmatched Employees ({{unmatched.length}})</h5>
         <p class="card-text">
