@@ -44,25 +44,25 @@ export default {
     onProcess() {
       this.emptyResult()
       this.classObject['is-invalid'] = false
-      if (!this.validate(this.employees)) {
+      const json = this.validateAndReturnJson(this.employees)
+      if (!json) {
         this.classObject['is-invalid'] = true
       } else {
-        const shuffled = this.shuffleArray(JSON.parse(this.employees))
+        const shuffled = this.shuffleArray(json)
         this.setResult(this.matchPairs(shuffled))
       }
     },
     isJson(str) {
       try {
-        JSON.parse(str)
+        return JSON.parse(str)
       } catch (e) {
         return false
       }
-      return true
     },
-    validate(str) {
+    validateAndReturnJson(str) {
       if (!str) return false
-      if (!this.isJson(str)) return false
-      return true
+      const json = this.isJson(str)
+      return json ? json : false
     }
   }
 }
