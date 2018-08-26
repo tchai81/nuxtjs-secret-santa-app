@@ -26,12 +26,12 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 
 ## Live Demo url
 
-<https://secret-santa-app-chieyevrqj.now.sh>
+<https://secret-santa-app-uuoapylhoc.now.sh>
 
 ## Specifications
 
 - An employee can only be assigned once
-  ...\* Emp1 is assigned to Emp2. Emp1 and Emp2 can no longer be assigned to other employees
+  - Emp1 is assigned to Emp2. Emp1 and Emp2 can no longer be assigned to other employees
 - An employee can only exchange gifts with someone of the same gender
 - An employee can only exchange gifts with someone NOT reporting to the same manager
 - Should accept a JSON string as input

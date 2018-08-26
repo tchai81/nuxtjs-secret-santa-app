@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapMutations, mapActions } from 'vuex'
 import Santa from '~/mixins/santa'
 import Modal from '~/components/modal'
 export default {
@@ -51,8 +51,10 @@ export default {
   },
   methods: {
     ...mapMutations({
-      setResult: 'santa/SET_RESULT',
       emptyResult: 'santa/EMPTY_RESULT'
+    }),
+    ...mapActions({
+      processResult: 'santa/processResult'
     }),
     onProcess() {
       this.emptyResult()
@@ -61,8 +63,7 @@ export default {
       if (!json) {
         this.classObject['is-invalid'] = true
       } else {
-        const shuffled = this.shuffleArray(json)
-        this.setResult(this.matchPairs(shuffled))
+        this.processResult(json)
       }
     },
     onShowSpecs() {
@@ -77,8 +78,7 @@ export default {
     },
     validateAndReturnJson(str) {
       if (!str) return false
-      const json = this.isJson(str)
-      return json ? json : false
+      return this.isJson(str)
     }
   }
 }

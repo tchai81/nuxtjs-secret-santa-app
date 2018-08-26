@@ -1,3 +1,5 @@
+import santa from '~/mixins/santa'
+
 export const state = () => ({
     result: {
         matched: [],
@@ -15,5 +17,13 @@ export const mutations = {
     },
     SET_RESULT(state, result) {
         state.result = result
+    }
+}
+
+export const actions = {
+    processResult(state, json) {
+        const methods = santa.methods
+        const shuffled = methods.shuffleArray(json)
+        state.commit('SET_RESULT', methods.matchPairs(shuffled))
     }
 }
