@@ -20,9 +20,7 @@ export default {
       return this.$store.state.santa.result.matched
     },
     total() {
-      let total=0
-      this.$store.state.santa.result.matched.forEach((item)=> total = total + item.length)
-      return total
+      return this.$store.state.santa.result.matched.reduce((acc, item) => acc + item.length, 0)
     }
   }
 }

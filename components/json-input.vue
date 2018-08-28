@@ -32,10 +32,8 @@
 
 <script>
 import { mapMutations, mapActions } from 'vuex'
-import Santa from '~/mixins/santa'
 import Modal from '~/components/modal'
 export default {
-  mixins: [Santa],
   components: {
     Modal
   },
