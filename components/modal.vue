@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import Employees from '~/mock/data/employees'
+import { sampleData1 as Employees } from '~/mock/data/employees'
 export default {
   data() {
     return {

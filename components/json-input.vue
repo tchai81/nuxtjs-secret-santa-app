@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import { sampleData2 as Employees } from '~/mock/data/employees'
 import { mapMutations, mapActions } from 'vuex'
 import Modal from '~/components/modal'
 export default {
@@ -44,7 +45,7 @@ export default {
         'form-control': true,
         'is-invalid': false
       },
-      employees: ''
+      employees: JSON.stringify(Employees)
     }
   },
   methods: {

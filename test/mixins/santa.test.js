@@ -1,6 +1,6 @@
 import test from 'ava'
 import santa from '../../mixins/santa'
-import data from '../../mock/data/employees'
+import { sampleData2 as data } from '../../mock/data/employees'
 
 test.before(t => {
     const methods = santa.methods
