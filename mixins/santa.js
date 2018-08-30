@@ -55,14 +55,14 @@ export default {
          */
         matchPairs(theArray) {
             const result = { matched: [], unmatched: [] }
-            let pair, total, unmatched
+            let pair, employeesTotal, unmatched
 
             const grouping = this.groupByGenderAndManagers(theArray)
 
             //pairing starts here
             for (let gender in grouping) {
-                total = Math.floor(grouping[gender].reduce((acc, manager) => acc + manager.employees.length, 0) / 2)
-                for (let i = 0; i < total; i++) {
+                employeesTotal = grouping[gender].reduce((acc, manager) => acc + manager.employees.length, 0)
+                for (let i = 0; i < employeesTotal; i++) {
                     pair = []
                         //sort by no of employees
                     grouping[gender].sort((a, b) => {
@@ -86,21 +86,6 @@ export default {
                         result.unmatched.push(...pair)
                     }
                 }
-
-                //getting unmatched employees from leftovers
-                unmatched = grouping[gender].reduce((acc, manager) => {
-                    if (manager.employees.length) {
-                        manager.employees.forEach(name => {
-                            acc.push({
-                                name: name,
-                                gender: gender,
-                                manager: manager.manager
-                            })
-                        })
-                    }
-                    return acc
-                }, [])
-                result.unmatched.push(...unmatched)
             }
             return result
         },
