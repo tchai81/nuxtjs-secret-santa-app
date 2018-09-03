@@ -80,7 +80,7 @@ export default {
                     }
                     //if there's pairing, match = success
                     if (pair.length === 2) {
-                        result.matched.push([...pair])
+                        result.matched.push(pair)
                     } else {
                         //if pairing < 2, match = fail, can be considered as unmatched employee
                         result.unmatched.push(...pair)
