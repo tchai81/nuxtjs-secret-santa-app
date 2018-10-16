@@ -4,21 +4,31 @@ module.exports = {
      */
     head: {
         title: 'Secret Santa App',
-        meta: [
-            { charset: 'utf-8' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        meta: [{
+                charset: 'utf-8'
+            },
+            {
+                name: 'viewport',
+                content: 'width=device-width, initial-scale=1'
+            },
             {
                 hid: 'description',
                 name: 'description',
                 content: 'This app will be used to randomly assign an employee to another employee so they can exchange gifts.'
             }
         ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+        link: [{
+            rel: 'icon',
+            type: 'image/x-icon',
+            href: '/favicon.ico'
+        }]
     },
     /*
      ** Customize the progress bar color
      */
-    loading: { color: '#3B8070' },
+    loading: {
+        color: '#3B8070'
+    },
     /*
      ** Build configuration
      */
@@ -26,8 +36,8 @@ module.exports = {
         /*
          ** Run ESLint on save
          */
-        extend(config, { isDev, isClient }) {
-            if (isDev && isClient) {
+        extend(config, { isDev }) {
+            if (isDev && process.client) {
                 config.module.rules.push({
                     enforce: 'pre',
                     test: /\.(js|vue)$/,
