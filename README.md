@@ -26,7 +26,7 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 
 ## Live Demo url
 
-<https://secret-santa-app-fncjmtarlc.now.sh>
+<https://secret-santa-app-wmxqlztrxq.now.sh>
 
 ## Specifications
 
